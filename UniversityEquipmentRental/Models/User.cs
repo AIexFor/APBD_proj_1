@@ -38,4 +38,4 @@ public class Employee : User
         : base(id, firstName, lastName, UserType.Employee)
     {
     }
-}
+} 

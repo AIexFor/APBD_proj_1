@@ -10,7 +10,7 @@ public class Rental(int id, User user, Equipment equipment, DateTime rentDate, i
     private DateTime? ReturnDate { get; set; }
     public decimal Penalty { get; private set; }
 
-    public bool IsReturned => ReturnDate.HasValue;
+    private bool IsReturned => ReturnDate.HasValue;
 
     public bool IsOverdue
     {

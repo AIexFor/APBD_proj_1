@@ -12,18 +12,10 @@ public class Rental(int id, User user, Equipment equipment, DateTime rentDate, i
 
     public bool IsReturned => ReturnDate.HasValue;
 
-    public bool IsOverdue
-    {
-        get
-        {
-            if (IsReturned)
-            {
-                return ReturnDate!.Value.Date > DueDate.Date;
-            }
-
-            return DateTime.Now.Date > DueDate.Date;
-        }
-    }
+    public bool IsOverdue =>
+        IsReturned
+            ? ReturnDate!.Value.Date > DueDate.Date
+            : DateTime.Now.Date > DueDate.Date;
 
     public void Return(DateTime returnDate, decimal penalty)
     {

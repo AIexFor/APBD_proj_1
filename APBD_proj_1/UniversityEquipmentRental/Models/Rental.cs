@@ -6,11 +6,11 @@ public class Rental(int id, User user, Equipment equipment, DateTime rentDate, i
     public User User { get; } = user;
     public Equipment Equipment { get; } = equipment;
     public DateTime RentDate { get; } = rentDate;
-    private DateTime DueDate { get; } = rentDate.AddDays(days);
+    public DateTime DueDate { get; } = rentDate.AddDays(days);
     private DateTime? ReturnDate { get; set; }
     public decimal Penalty { get; private set; }
 
-    private bool IsReturned => ReturnDate.HasValue;
+    public bool IsReturned => ReturnDate.HasValue;
 
     public bool IsOverdue
     {

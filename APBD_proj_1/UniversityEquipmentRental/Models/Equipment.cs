@@ -18,8 +18,13 @@ public abstract class Equipment(int id, string name)
 public class Laptop(int id, string name, int ramGb, string processor)
     : Equipment(id, name)
 {
-    private int RamGb { get; set; } = ramGb;
-    private string Processor { get; set; } = processor;
+    public int RamGb { get; set; } = ramGb;
+    public string Processor { get; set; } = processor;
+
+    public override string ToString()
+    {
+        return ($"Laptop | RAM: {RamGb} GB | CPU: {Processor}");
+    }
 
     public override string GetSpecification()
     {
@@ -30,8 +35,14 @@ public class Laptop(int id, string name, int ramGb, string processor)
 public class Projector(int id, string name, string resolution, int brightnessLumens)
     : Equipment(id, name)
 {
-    private string Resolution { get; set; } = resolution;
-    private int BrightnessLumens { get; set; } = brightnessLumens;
+    private string _field;
+    public string Field
+    {
+        get { return _field; }
+        set { _field = value; }
+    }
+    public string Resolution { get; set; } = resolution;
+    public int BrightnessLumens { get; set; } = brightnessLumens;
 
     public override string GetSpecification()
     {
@@ -42,8 +53,8 @@ public class Projector(int id, string name, string resolution, int brightnessLum
 public class Camera(int id, string name, int megapixels, string lensType)
     : Equipment(id, name)
 {
-    private int Megapixels { get; set; } = megapixels;
-    private string LensType { get; set; } = lensType;
+    public int Megapixels { get; set; } = megapixels;
+    public string LensType { get; set; } = lensType;
 
     public override string GetSpecification()
     {

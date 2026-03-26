@@ -16,6 +16,8 @@ public class Rental(int id, User user, Equipment equipment, DateTime rentDate, i
         IsReturned
             ? ReturnDate!.Value.Date > DueDate.Date
             : DateTime.Now.Date > DueDate.Date;
+    
+    
 
     public void Return(DateTime returnDate, decimal penalty)
     {

@@ -160,7 +160,7 @@ internal class Program
         foreach (var equipment in equipmentItems)
         {
             Console.WriteLine(
-                $"ID: {equipment.Id} | Name: {equipment.Name} | Status: {equipment.Status} | {equipment.GetSpecification()}");
+                $"ID: {equipment.Id} | Name: {equipment.Name} | Status: {equipment.Status} | {equipment}");
         }
     }
 
